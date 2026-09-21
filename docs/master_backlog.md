@@ -17,10 +17,10 @@ This backlog tracks the incremental development of the MAYA AI Agent OS.
 
 ## Sprint 1 — MAYA Core (The Brain)
 **Objective:** MAYA can communicate with an online model via OmniRoute.
-- `[ ]` MAYA-101: Create abstract Model Gateway interface
-- `[ ]` MAYA-102: Implement OmniRoute provider integration
-- `[ ]` MAYA-103: Implement basic structured messaging
-- `[ ]` MAYA-104: Error handling and timeouts
+- `[x]` MAYA-101: Create abstract Model Gateway interface
+- `[x]` MAYA-102: Implement OmniRoute provider integration
+- `[x]` MAYA-103: Implement basic structured messaging
+- `[x]` MAYA-104: Error handling and timeouts
 
 ## Sprint 2 — Actual Agent
 **Objective:** MAYA stops being a chatbot and begins using the Agent Loop.

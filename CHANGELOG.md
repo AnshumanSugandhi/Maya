@@ -3,7 +3,14 @@
 All notable changes to the MAYA AI Agent OS project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.1.0-alpha] - Unreleased (End of Sprint 0)
+## [Unreleased] (End of Sprint 1)
+
+### Added
+- **Structured Messaging:** Implemented `Message` and `Role` dataclasses in `src/maya/brain/messages.py` to enforce strict communication protocols.
+- **Model Gateway Interface:** Created abstract `ModelGateway` interface in `src/maya/brain/gateway.py` to decouple MAYA from specific LLM providers.
+- **OmniRoute Integration:** Built a robust, dependency-free HTTP client `OmniRouteGateway` in `src/maya/brain/omniroute.py` that routes requests dynamically based on task type.
+
+## [v0.1.0-alpha] - 2026-09-22 (End of Sprint 0)
 
 ### Added
 - **Architecture Skeleton:** Established the core directory structure (`src/maya/core`, `brain`, `memory`, `tools`, `agents`, `dashboard`, `security`).
