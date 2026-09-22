@@ -41,6 +41,13 @@ This backlog tracks the incremental development of the MAYA AI Agent OS.
 - `[x]` MAYA-302: Implement Terminal Tool (Shell commands)
 - `[x]` MAYA-303: Register new tools in the agent runtime
 
+## Sprint 6.5 — Interactive Terminal CLI (@ Mentions)
+**Objective:** Transform MAYA into a developer CLI tool like Claude Code.
+- `[x]` MAYA-651: Implement basic CLI Read-Eval-Print-Loop (REPL)
+- `[x]` MAYA-652: Implement `@filename` context injection parser
+- `[x]` MAYA-653: Add ANSI color formatting
+- `[x]` MAYA-654: Wire `main.py` to launch CLI
+
 ## Future Sprints
 - **Sprint 4:** Memory (Short-term, Long-term, Episodic, Procedural)
 - **Sprint 5:** Permissions & Security

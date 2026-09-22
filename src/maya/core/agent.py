@@ -31,9 +31,12 @@ class MayaAgent:
             content = response_msg.content.strip()
             
             # CHECK IF TOOL CALL
-            if content.startswith("{") and content.endswith("}"):
+            import re
+            json_match = re.search(r'(\{.*\})', content, re.DOTALL)
+            
+            if json_match:
                 try:
-                    call_data = json.loads(content)
+                    call_data = json.loads(json_match.group(1))
                     if "tool" in call_data:
                         tool_name = call_data["tool"]
                         args = call_data.get("arguments", {})

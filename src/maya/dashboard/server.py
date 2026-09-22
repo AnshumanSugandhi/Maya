@@ -30,20 +30,25 @@ class DashboardHandler(http.server.SimpleHTTPRequestHandler):
                 user_input = data.get("message", "")
                 
                 if user_input:
+                    # Track how many tools exist before the run
+                    prev_tool_count = sum(1 for m in self.agent.conversation if m.role.value == "tool")
+                    
                     # Run the agent loop
                     response = self.agent.run(user_input)
+                    
+                    # Find newly executed tools
+                    new_tools = [m for m in self.agent.conversation if m.role.value == "tool"][prev_tool_count:]
                     
                     self.send_response(200)
                     self.send_header('Content-type', 'application/json')
                     self.end_headers()
                     
-                    # Return the response and the updated conversation history
+                    # Return the response and the newly executed tools
                     response_data = {
                         "response": response,
-                        # Send back a simplified conversation log for the UI to display tools etc
-                        "history": [
-                            {"role": msg.role.value, "content": msg.content, "name": msg.name}
-                            for msg in self.agent.conversation
+                        "new_tools": [
+                            {"name": msg.name, "content": msg.content}
+                            for msg in new_tools
                         ]
                     }
                     self.wfile.write(json.dumps(response_data).encode('utf-8'))

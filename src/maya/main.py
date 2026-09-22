@@ -13,15 +13,11 @@ from maya.tools.system_tools import GetTimeTool
 from maya.tools.fs_tools import ReadFileTool, WriteFileTool, ListDirectoryTool
 from maya.tools.shell_tools import RunCommandTool
 from maya.core.agent import MayaAgent
-from maya.dashboard.server import start_server
+from maya.cli.app import start_cli
 
 def main():
-    logger.info("Initializing MAYA OS...")
+    logger.info("Initializing MAYA OS CLI...")
     logger.info(f"Environment: {config.env}")
-    
-    print("\n==================================")
-    print("      MAYA OS Initialized         ")
-    print("==================================\n")
     
     # Setup Brain & Tools
     gateway = OmniRouteGateway()
@@ -35,8 +31,8 @@ def main():
     # Initialize Agent
     agent = MayaAgent(gateway=gateway, registry=registry)
     
-    # Start the local UI Server instead of terminal loop
-    start_server(agent)
+    # Start the interactive Terminal CLI
+    start_cli(agent)
     
 if __name__ == "__main__":
     main()

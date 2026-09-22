@@ -73,18 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove loading indicator
             document.getElementById(loadingId).remove();
             
-            // Check history for any Tool calls that happened in the background and show them
-            if (data.history) {
-                // Find messages that aren't already displayed
-                // For simplicity in this demo, we'll just check the last few messages for Tools
-                const tools = data.history.filter(msg => msg.role === "tool");
-                // In a production app, we'd sync the exact history properly. 
-                // For now, if a tool was executed, log it.
-                if (tools.length > 0) {
-                    const lastTool = tools[tools.length-1];
-                    addMessage(`Executed tool: ${lastTool.name}\nResult: ${lastTool.content}`, 'tool');
-                    addActivity(`Executed ${lastTool.name}`);
-                }
+            // Check for any Tool calls that happened in the background and show them
+            if (data.new_tools && data.new_tools.length > 0) {
+                data.new_tools.forEach(tool => {
+                    addMessage(`Executed tool: ${tool.name}\nResult: ${tool.content}`, 'tool');
+                    addActivity(`Executed ${tool.name}`);
+                });
             }
 
             // 4. Show MAYA response
