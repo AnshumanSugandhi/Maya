@@ -48,9 +48,23 @@ This backlog tracks the incremental development of the MAYA AI Agent OS.
 - `[x]` MAYA-653: Add ANSI color formatting
 - `[x]` MAYA-654: Wire `main.py` to launch CLI
 
+## Sprint 4 — Memory (Short-Term & Long-Term)
+**Objective:** MAYA can remember conversations across sessions and prevent context limits.
+- `[x]` MAYA-401: Implement `HistoryManager` to serialize/deserialize to disk (`data/history.json`)
+- `[x]` MAYA-402: Implement smart `_get_context_window` to truncate old history
+- `[x]` MAYA-403: Integrate auto-loading/auto-saving into the `MayaAgent` runtime loop.
+
 ## Future Sprints
-- **Sprint 4:** Memory (Short-term, Long-term, Episodic, Procedural)
-- **Sprint 5:** Permissions & Security
+- **Sprint 5:** Permissions, Security & Guardrails
+- **Sprint 6:** Web Search & Networking Tools
+  - `[ ]` MAYA-601: Implement `WebSearchTool` using DuckDuckGo or Tavily API.
+  - `[ ]` MAYA-602: Implement `FetchURLTool` to scrape webpage text.
+  - `[ ]` MAYA-501: **Command Interception Proxy:** Middleware to intercept all tool calls before execution.
+  - `[ ]` MAYA-502: **Prohibited Blacklist:** Globally enforce blocks on destructive commands (e.g., `rm -rf /`).
+  - `[ ]` MAYA-503: **Granular Sandboxing:** Define explicit Read/Write access boundaries per agent/tool.
+  - `[ ]` MAYA-504: **Semantic Intent Analysis:** Pre-execution analysis to determine the true intent of shell commands.
+  - `[ ]` MAYA-505: **Human-in-the-Loop (HITL):** Automatic user confirmation prompts for high-risk actions.
+  - `[ ]` MAYA-506: **Immutable Audit Trails:** Secure, tamper-proof logging of all system-modifying agent actions.
 - **Sprint 7:** Agent Manager (Development, Research, etc.)
 - **Sprint 8:** Google Integrations
 - **Sprint 9:** Windows Integrations

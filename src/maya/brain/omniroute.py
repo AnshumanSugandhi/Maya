@@ -32,7 +32,7 @@ class OmniRouteGateway(ModelGateway):
         payload = {
             "model": route.model,
             "messages": [msg.to_dict() for msg in messages],
-            "max_tokens": 1024
+            "max_tokens": 8192
         }
         
         headers = {

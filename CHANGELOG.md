@@ -10,7 +10,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Model Gateway Interface:** Created abstract `ModelGateway` interface in `src/maya/brain/gateway.py` to decouple MAYA from specific LLM providers.
 - **OmniRoute Integration:** Built a robust, dependency-free HTTP client `OmniRouteGateway` in `src/maya/brain/omniroute.py` that routes requests dynamically based on task type.
 
-## [Unreleased] (End of Sprint 6.5)
+## [Unreleased] (End of Sprint 4)
+
+### Added
+- **Long-Term Memory:** Implemented `HistoryManager` in `src/maya/memory/history.py` to seamlessly save and load conversation history from `data/history.json` across restarts.
+- **Short-Term Memory Windowing:** Added a smart truncator in `MayaAgent` that guarantees the context window will never crash the LLM by only feeding it the System Prompt and the last N messages (default 30), while preserving the full history on disk.
+
+## [v0.4.0-alpha] - 2026-09-22 (End of Sprint 6.5)
 
 ### Added
 - **Terminal CLI:** Transformed MAYA into a developer CLI tool using `src/maya/cli/app.py`.
