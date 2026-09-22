@@ -35,8 +35,13 @@ This backlog tracks the incremental development of the MAYA AI Agent OS.
 - `[x]` MAYA-602: Implement local backend API server
 - `[x]` MAYA-603: Connect UI to MayaAgent core loop
 
+## Sprint 3 — MAYA Gets Hands (Tools)
+**Objective:** MAYA can interact with the operating system.
+- `[x]` MAYA-301: Implement Filesystem Tools (Read, Write, List)
+- `[x]` MAYA-302: Implement Terminal Tool (Shell commands)
+- `[x]` MAYA-303: Register new tools in the agent runtime
+
 ## Future Sprints
-- **Sprint 3:** MAYA Gets Hands (Tools: Filesystem, Terminal, Git)
 - **Sprint 4:** Memory (Short-term, Long-term, Episodic, Procedural)
 - **Sprint 5:** Permissions & Security
 - **Sprint 7:** Agent Manager (Development, Research, etc.)

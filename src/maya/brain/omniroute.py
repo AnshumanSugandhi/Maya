@@ -12,7 +12,7 @@ class OmniRouteGateway(ModelGateway):
     
     def __init__(self, endpoint_url: str = None, default_timeout: int = 30):
         # We allow overriding the endpoint, otherwise it pulls from config (which might not be set yet)
-        self.endpoint_url = endpoint_url or config_manager.get_api_key("OMNIROUTE_ENDPOINT") or "https://api.omniroute.example.com/v1/chat/completions"
+        self.endpoint_url = endpoint_url or config_manager.get_api_key("OMNIROUTE_ENDPOINT") or "https://openrouter.ai/api/v1/chat/completions"
         self.timeout = default_timeout
 
     def invoke(self, messages: List[Message], task_type: str = "reasoning") -> Optional[Message]:
@@ -31,7 +31,8 @@ class OmniRouteGateway(ModelGateway):
             
         payload = {
             "model": route.model,
-            "messages": [msg.to_dict() for msg in messages]
+            "messages": [msg.to_dict() for msg in messages],
+            "max_tokens": 1024
         }
         
         headers = {

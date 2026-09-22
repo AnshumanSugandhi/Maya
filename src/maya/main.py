@@ -10,6 +10,8 @@ from maya.core.logger import logger
 from maya.brain.omniroute import OmniRouteGateway
 from maya.tools.registry import ToolRegistry
 from maya.tools.system_tools import GetTimeTool
+from maya.tools.fs_tools import ReadFileTool, WriteFileTool, ListDirectoryTool
+from maya.tools.shell_tools import RunCommandTool
 from maya.core.agent import MayaAgent
 from maya.dashboard.server import start_server
 
@@ -25,6 +27,10 @@ def main():
     gateway = OmniRouteGateway()
     registry = ToolRegistry()
     registry.register(GetTimeTool())
+    registry.register(ReadFileTool())
+    registry.register(WriteFileTool())
+    registry.register(ListDirectoryTool())
+    registry.register(RunCommandTool())
     
     # Initialize Agent
     agent = MayaAgent(gateway=gateway, registry=registry)

@@ -10,7 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Model Gateway Interface:** Created abstract `ModelGateway` interface in `src/maya/brain/gateway.py` to decouple MAYA from specific LLM providers.
 - **OmniRoute Integration:** Built a robust, dependency-free HTTP client `OmniRouteGateway` in `src/maya/brain/omniroute.py` that routes requests dynamically based on task type.
 
-## [Unreleased] (End of Sprint 6)
+## [Unreleased] (End of Sprint 3)
+
+### Added
+- **Filesystem Tools:** Implemented `ReadFileTool`, `WriteFileTool`, and `ListDirectoryTool` in `src/maya/tools/fs_tools.py` giving MAYA the ability to manipulate code and text files.
+- **Terminal Tool:** Implemented `RunCommandTool` in `src/maya/tools/shell_tools.py` using `subprocess` with a strict 30-second timeout.
+- **Registry Update:** Registered all new OS tools into `src/maya/main.py`.
+
+## [v0.3.0-alpha] - 2026-09-22 (End of Sprint 6)
 
 ### Added
 - **Desktop Dashboard:** Implemented a stunning local web-based UI (`src/maya/dashboard/static/`) featuring glassmorphism, dark mode, and dynamic animated backgrounds.
