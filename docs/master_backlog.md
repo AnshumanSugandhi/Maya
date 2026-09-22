@@ -24,16 +24,21 @@ This backlog tracks the incremental development of the MAYA AI Agent OS.
 
 ## Sprint 2 — Actual Agent
 **Objective:** MAYA stops being a chatbot and begins using the Agent Loop.
-- `[ ]` MAYA-201: Implement Agent Loop skeleton
-- `[ ]` MAYA-202: Implement basic Planner
-- `[ ]` MAYA-203: Implement Tool Registry pattern
-- `[ ]` MAYA-204: Execute first tool call
+- `[x]` MAYA-201: Implement Agent Loop skeleton
+- `[x]` MAYA-202: Implement basic Planner
+- `[x]` MAYA-203: Implement Tool Registry pattern
+- `[x]` MAYA-204: Execute first tool call
+
+## Sprint 6 — Desktop Dashboard (Prioritized)
+**Objective:** MAYA gets a beautiful, modern graphical interface.
+- `[x]` MAYA-601: Design responsive web assets (HTML/CSS/JS)
+- `[x]` MAYA-602: Implement local backend API server
+- `[x]` MAYA-603: Connect UI to MayaAgent core loop
 
 ## Future Sprints
 - **Sprint 3:** MAYA Gets Hands (Tools: Filesystem, Terminal, Git)
 - **Sprint 4:** Memory (Short-term, Long-term, Episodic, Procedural)
 - **Sprint 5:** Permissions & Security
-- **Sprint 6:** Desktop Dashboard
 - **Sprint 7:** Agent Manager (Development, Research, etc.)
 - **Sprint 8:** Google Integrations
 - **Sprint 9:** Windows Integrations

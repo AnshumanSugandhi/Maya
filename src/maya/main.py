@@ -7,16 +7,30 @@ sys.path.insert(0, str(src_path))
 
 from maya.core.config import config
 from maya.core.logger import logger
+from maya.brain.omniroute import OmniRouteGateway
+from maya.tools.registry import ToolRegistry
+from maya.tools.system_tools import GetTimeTool
+from maya.core.agent import MayaAgent
+from maya.dashboard.server import start_server
 
 def main():
     logger.info("Initializing MAYA OS...")
     logger.info(f"Environment: {config.env}")
-    logger.info(f"Debug Mode: {config.debug}")
-    logger.info(f"Loaded {len(config.omniroute_endpoints)} OmniRoute endpoints.")
     
     print("\n==================================")
     print("      MAYA OS Initialized         ")
     print("==================================\n")
+    
+    # Setup Brain & Tools
+    gateway = OmniRouteGateway()
+    registry = ToolRegistry()
+    registry.register(GetTimeTool())
+    
+    # Initialize Agent
+    agent = MayaAgent(gateway=gateway, registry=registry)
+    
+    # Start the local UI Server instead of terminal loop
+    start_server(agent)
     
 if __name__ == "__main__":
     main()
